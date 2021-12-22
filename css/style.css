@@ -1,0 +1,187 @@
+@font-face{
+    src: url('../font/poppins.ttf');
+    font-family: 'poppins';
+    font-weight: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+html, body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #ddd;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #ccc;
+}
+
+.wrapper{
+    width: 370px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    border-top: none;
+}
+
+.wrapper .title{
+    background-color: #23cca7;
+    color: #fff;
+    text-align: center;
+    font-weight: 550;
+    font-size: 20px;
+    line-height: 60px;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 2px solid #04cca1;
+}
+
+.wrapper .form{
+    padding: 20px 15px;
+    min-height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.wrapper .form .inbox{
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+
+.wrapper .form .user-inbox{
+    justify-content: flex-end;
+    margin: 10px 0;
+}
+
+.wrapper .form .inbox .icon{
+    width: 40px;
+    height: 40px;
+    background-color: #23cca7;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 19px;
+
+}
+
+.wrapper .form .inbox .msg-header{
+    max-width: 60%;
+    background-color: #23cca7;
+    margin-left: 7px;
+    border-radius: 0 10px 10px 10px;
+}
+
+.form .inbox .msg-header p{
+    color: #fff;
+    padding: 5px;
+    /* word-break: break-all; */
+    
+}
+
+.wrapper .form .user-inbox .msg-header{
+    border-radius: 10px 10px 0 10px;
+    background-color: #555;
+}
+
+.form .user-inbox .msg-header p{
+
+}
+
+.wrapper .typing-field{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #efefef;
+    border-top: 1px solid #d9d9d9;
+    border-radius: 0 0 5px 5px;
+}
+
+.wrapper .typing-field .input-data{
+    height: 45px;
+    width: 335px;
+    position: relative;
+}
+
+.wrapper .typing-field .input-data input{
+    height: 100%;
+    width: 100%;
+    padding: 0 80px 0 15px;
+    outline: none;
+    border: 1px solid transparent;
+    font-size: 13px;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.typing-field .input-data input:focus{
+    border-color: #23cca7;
+}
+
+.input-data input::placeholder{
+    color: #999999;
+    transition: all 0.3s ease;
+}
+
+.input-data input:focus::placeholder{
+    color: #bfbfbf;
+}
+
+.wrapper .typing-field .input-data button{
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background-color: #23cca7;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper .typing-field .input-data input:valid ~ button{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.typing-field .input-data button:hover{
+    background-color: #14e0b4;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+
+@media screen and (max-width:350px){
+    .wrapper{
+        width: 100vw;
+        max-height: 100vh;
+    }
+    
+}
